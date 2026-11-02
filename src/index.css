@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-0: #000000;
+  --color-ink-1: #0a0a0a;
+  --color-ink-2: #121212;
+  --color-ink-3: #1a1a1a;
+  --color-ink-4: #242424;
+  --color-line: rgb(255 255 255 / 0.07);
+  --color-line-strong: rgb(255 255 255 / 0.12);
+  --color-fg: #f4f4f5;
+  --color-fg-2: #a1a1aa;
+  --color-fg-3: #6b6b73;
+  --color-accent: #ffffff;
+  --color-danger: #ff5c5c;
+  --font-sans: "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+@layer base {
+  html, body, #root { height: 100%; }
+  html { background: #000; color-scheme: dark; }
+  body {
+    margin: 0;
+    background: #000;
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+    font-feature-settings: "cv11", "ss01";
+  }
+  button, [role="button"] { -webkit-user-select: none; user-select: none; cursor: default; }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; }
+  input, textarea { font: inherit; font-size: 16px; color: inherit; background: none; border: 0; outline: none; }
+  @media (min-width: 768px) { input, textarea { font-size: 14px; } }
+  ::selection { background: rgb(255 255 255 / 0.22); }
+  * { scrollbar-width: thin; scrollbar-color: rgb(255 255 255 / 0.1) transparent; }
+  input:focus-visible, textarea:focus-visible { outline: none; }
+  :focus-visible { outline: 1.5px solid rgb(255 255 255 / 0.5); outline-offset: 2px; border-radius: 8px; }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
